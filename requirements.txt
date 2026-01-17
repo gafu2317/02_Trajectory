@@ -1,0 +1,7 @@
+openai
+numpy
+scikit-learn
+chromadb
+streamlit
+plotly
+python-dotenv
