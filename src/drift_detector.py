@@ -69,15 +69,15 @@ class DriftDetector:
         except Exception as e:
             return f"判定不能({e})"
 
-    def analyze(self, discussion_data: dict) -> list[dict]:
+    def analyze(self, discussion_data: dict) -> tuple[list[dict], list[float]]:
         """
-        議論データを分析し、各発言の類似度と脱線判定結果を返す。
+        議論データを分析し、各発言の類似度と脱線判定結果、およびゴールのベクトルを返す。
 
         Args:
             discussion_data (dict): 'goal'と'utterances'のキーを持つ議論データ。
 
         Returns:
-            list[dict]: 各発言の分析結果のリスト。
+            tuple[list[dict], list[float]]: (各発言の分析結果リスト, ゴールの埋め込みベクトル)
         """
         results = []
         goal = discussion_data["goal"]
@@ -96,6 +96,7 @@ class DriftDetector:
             result = {
                 "speaker": utterance["speaker"],
                 "text": text,
+                "embedding": utterance_embedding, # 埋め込みも結果に含める
                 "is_drift_label": utterance.get("is_drift"),
                 "similarity": similarity,
                 "llm_judgment": None
@@ -107,4 +108,4 @@ class DriftDetector:
             
             results.append(result)
             
-        return results
+        return results, goal_embedding

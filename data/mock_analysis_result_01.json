@@ -1,0 +1,37 @@
+[
+  {
+    "speaker": "A",
+    "text": "皆さん、来週のチームランチですが、そろそろお店を決めませんか？",
+    "is_drift_label": false,
+    "similarity": 0.6467,
+    "llm_judgment": null
+  },
+  {
+    "speaker": "B",
+    "text": "いいですね！イタリアンなんてどうでしょう？駅前に新しいお店ができたみたいですよ。",
+    "is_drift_label": false,
+    "similarity": 0.2939,
+    "llm_judgment": null
+  },
+  {
+    "speaker": "C",
+    "text": "イタリアン、賛成です。そういえば、昨日見た映画がすごく面白くて...",
+    "is_drift_label": true,
+    "similarity": 0.1604,
+    "llm_judgment": "ノイズ"
+  },
+  {
+    "speaker": "A",
+    "text": "（映画の話も気になりますが、まずはお店の話を...）ピザが美味しいと評判のお店みたいですね。そこにしますか？",
+    "is_drift_label": false,
+    "similarity": 0.3783,
+    "llm_judgment": null
+  },
+  {
+    "speaker": "B",
+    "text": "あ、すみません。つい。そのピザ屋さん、良さそうですね！",
+    "is_drift_label": false,
+    "similarity": 0.3154,
+    "llm_judgment": null
+  }
+]
